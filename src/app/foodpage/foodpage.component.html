@@ -1,0 +1,32 @@
+<!-- <p>foodpage works!</p> -->
+
+<div class="container">
+    <img [src]="food.imageUrl" [alt]="food.name">
+
+    <div class="details">
+        <div class="header">
+            <span class="name">
+                {{food.name}}
+            </span>
+            
+            <span class="material-symbols-outlined {{food.favorite ? '' : 'not'}}" style="font-size: 15px;">favorite</span>
+    
+            <div class="origins">
+                <span *ngFor="let origin of food.origins">
+                    {{origin}}
+                </span>
+            </div>
+    
+            <div class="cook-time">
+                <span>Time to cook is about: <strong>{{food.cookTime}}</strong> Minutes</span>
+            </div>
+    
+            <div class="price">
+                <span>{{food.price|currency}}</span>
+            </div>
+    
+            <button (click)="addToCart()">Add to cart</button>
+        </div>
+    </div>
+</div>
+
